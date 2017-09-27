@@ -4,9 +4,6 @@ using UnityEngine;
 
 public class GroundScript : MonoBehaviour {
 
-	public GameObject ground;
-	public GameObject player;
-
 	float speed = 5f;
 
 	// Use this for initialization
@@ -18,6 +15,10 @@ public class GroundScript : MonoBehaviour {
 	void Update () {
 
 		transform.position += new Vector3 (-speed * Time.deltaTime, 0, 0);
+
+		if (this.transform.position.x < -38) {
+			Destroy (this.gameObject);
+		}
 
 	}
 }
