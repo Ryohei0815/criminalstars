@@ -247,7 +247,7 @@ BoxCollider:
   m_GameObject: {fileID: 1599157565036694}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
@@ -285,3 +285,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee46dadcae05b45b5b7672ae41e9382d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  refObj: {fileID: 0}
+  barrierObj: {fileID: 1015888192019616, guid: 750b882a246ec4923b51634a8f2e9d7d, type: 2}
