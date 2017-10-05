@@ -3,7 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class CitizenManagerScript : MonoBehaviour {
-	
+
+	GameObject mainCamera;
+	GameObject Citizen;
+	Camera main;
+
 	public GameObject[] citizenObjs;
 
 	private int num;

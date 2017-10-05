@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Wall
   - Barrier
+  - Citizen
   layers:
   - Default
   - TransparentFX
