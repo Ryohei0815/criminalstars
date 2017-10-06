@@ -16,12 +16,10 @@ public class TouchScript : MonoBehaviour {
 		if (Input.GetMouseButtonDown (0)) {
 			Shot ();
 		}
-		
 	}
 
 	void Shot(){
-		Vector3 center = new Vector3(Screen.width/2,Screen.height/2,0);
-		Ray ray = Camera.main.ScreenPointToRay (center);
+		Ray ray = Camera.main.ScreenPointToRay (Input.mousePosition);
 		float distance = 100;
 		if (Physics.Raycast (ray, out hit, distance)) {
 			if (hit.collider.tag == "Citizen") {

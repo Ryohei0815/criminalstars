@@ -14,7 +14,6 @@ public class CitizenScript : MonoBehaviour {
 		
 	}
 	void Touch () {
-		
 		Destroy (this.gameObject);
 	}
 }
