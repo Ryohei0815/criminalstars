@@ -2,18 +2,22 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CitizenScript : MonoBehaviour {
+public class CitizenScript : MonoBehaviour
+{
 
-	// Use this for initialization
-	void Start () {
-		
+	GameManager gameManager;
+
+	void Awake ()
+	{
+
+		gameManager = GameObject.FindGameObjectWithTag ("Manager").GetComponent<GameManager> ();
+
 	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
-	void Touch () {
+
+	void Touch ()
+	{
+		gameManager.degree--;
+		gameManager.speed--;
 		Destroy (this.gameObject);
 	}
 }

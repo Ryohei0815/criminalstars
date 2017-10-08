@@ -13,7 +13,7 @@ public class BarrierManagerScript : MonoBehaviour {
 	private int num;
 
 	void Awake() {
-		num = Random.Range(1, barrierObjs.Length);
+		num = Random.Range(3, barrierObjs.Length);
 		List<int> tempNums = new List<int>() { 0, 1, 2, 3, 4 };
 		//refObj = GameObject.Find("GroundCreater");
 		//d1 = refObj.GetComponent<GroundManagerScript>();

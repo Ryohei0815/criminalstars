@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CitizenManagerScript : MonoBehaviour {
+public class CitizenManagerScript : MonoBehaviour
+{
 
 	GameObject mainCamera;
 	GameObject Citizen;
@@ -12,16 +13,17 @@ public class CitizenManagerScript : MonoBehaviour {
 
 	private int num;
 
-	void Awake() {
-		num = Random.Range(1, citizenObjs.Length);
-		List<int> tempNums = new List<int>() { 0, 1, 2, 3 };
+	void Awake ()
+	{
+		num = Random.Range (3, citizenObjs.Length);
+		List<int> tempNums = new List<int> () { 0, 1, 2, 3, 4, 5 };
 		//refObj = GameObject.Find("GroundCreater");
 		//d1 = refObj.GetComponent<GroundManagerScript>();
 
 		for (int i = 0; i < num; i++) {
-			int randomIndex = Random.Range(0, tempNums.Count);
-			citizenObjs[tempNums[randomIndex]].SetActive(true);
-			tempNums.Remove(randomIndex);
+			int randomIndex = Random.Range (0, tempNums.Count);
+			citizenObjs [tempNums [randomIndex]].SetActive (true);
+			tempNums.Remove (randomIndex);
 		}
 
 

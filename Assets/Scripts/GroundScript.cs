@@ -4,17 +4,15 @@ using UnityEngine;
 
 public class GroundScript : MonoBehaviour {
 
-	public float speed = 5f;
+	GameManager gameManager;
 
-	// Use this for initialization
-	void Start () {
-		
+	void Awake () {
+		gameManager = GameObject.FindGameObjectWithTag("Manager").GetComponent<GameManager> ();
 	}
-	
-	// Update is called once per frame
+
 	void Update () {
 
-		transform.position += new Vector3 (-speed * Time.deltaTime, 0, 0);
+		transform.position += new Vector3 (-gameManager.speed * Time.deltaTime, 0, 0);
 
 		if (this.transform.position.x < -38) {
 			Destroy (this.gameObject);
