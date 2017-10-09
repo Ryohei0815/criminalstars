@@ -7,11 +7,31 @@ public class GameManager : MonoBehaviour
 {
 	public float speed;
 
-	public float degree;
-
-	public Text degreeText;
+	public int degree;
 
 	float timer;
+
+	private void Awake ()
+	{
+		if (instance == null)
+			DontDestroyOnLoad (this);
+	}
+
+	protected static GameManager instance;
+
+	public static GameManager Instance {
+		get {
+			if (instance == null) {
+				instance = (GameManager)FindObjectOfType (typeof(GameManager));
+
+				if (instance == null) {
+					Debug.LogWarning (typeof(GameManager) + "is nothing");
+				}
+			}
+
+			return instance;
+		}
+	}
 
 	void Update ()
 	{
@@ -22,11 +42,9 @@ public class GameManager : MonoBehaviour
 			speed += 0.5f;
 			degree++;
 		}
-		if (degree >= 6f) {
-			degree = 6f;
+		if (degree >= 6) {
+			degree = 6;
 		}
-
-		degreeText.text = "★ × " + degree.ToString ();
 
 	}
 

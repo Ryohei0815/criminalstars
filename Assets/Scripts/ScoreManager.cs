@@ -12,20 +12,29 @@ public class ScoreManager : MonoBehaviour
 	public Text scoreText;
 	//public static ScoreManager Instance = null;
 
-	void Awake ()
+	private void Awake ()
 	{
-
-		gameManager = GameObject.FindGameObjectWithTag ("Manager").GetComponent<GameManager> ();
-
-//		if (Instance = null) {
-//			Instance = this;
-//			DontDestroyOnLoad (this.gameObject);
-//		} else {
-//			Destroy (this.gameObject);
-//			Debug.Log ("Destroy");
-//		}
-
+		gameManager = GameObject.FindWithTag ("Manager").GetComponent<GameManager> ();
+		if (instance == null)
+			DontDestroyOnLoad (this);
 	}
+
+	protected static ScoreManager instance;
+
+	public static ScoreManager Instance {
+		get {
+			if (instance == null) {
+				instance = (ScoreManager)FindObjectOfType (typeof(ScoreManager));
+
+				if (instance == null) {
+					Debug.LogWarning (typeof(ScoreManager) + "is nothing");
+				}
+			}
+
+			return instance;
+		}
+	}
+
 
 	private void Update ()
 	{

@@ -8,16 +8,16 @@ public class GameOverScript : MonoBehaviour
 {
 	public Text ScoreText;
 
-	//GameObject FindObject;
+	GameObject FindObject;
 
-	//	void Start ()
-	//	{
-	//
-	//		FindObject = GameObject.Find ("ScoreManager");
-	//		ScoreManager sco = FindObject.GetComponent<ScoreManager> ();
-	//		ScoreText.text = sco.score.ToString () + "M";
-	//
-	//	}
+	void Start ()
+	{
+	
+//		FindObject = GameObject.Find ("ScoreManager");
+//		ScoreManager sco = FindObject.GetComponent<ScoreManager> ();
+		ScoreText.text = ScoreManager.Instance.score.ToString ("000.0") + "M";
+	
+	}
 
 	public void Retry ()
 	{
